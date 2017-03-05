@@ -1,0 +1,8 @@
+<div>
+	<div>{{getString(problem)}}</div>
+	<div>
+		<span>Enter your answer: </span>
+		<input type='text' ng-model='currGuess' ng-change='update()'/>
+		<div id={{id+'Guess'}} ng-class="getClass()"></div>
+	</div>
+</div>

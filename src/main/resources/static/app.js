@@ -1,0 +1,1 @@
+var mathPracticeApp = angular.module('mathPracticeApp', ['ngSanitize']);

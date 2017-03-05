@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="mathPracticeApp">
+	<head>
+		<title>
+			Math Practice Problems
+		</title>
+		<link rel='stylesheet' type='text/css' href='mystyle.css'>
+		<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+ 		<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js'></script>
+		<script src='lib/angular-sanitize.min.js'></script>
+		<script src='util.js'></script>
+		<script src='app.js'></script>
+		<script src='Controllers/polynomialController.js'></script>
+		<script src='Controllers/mppProblemController.js'></script>
+		<script src='Directives/mppProblemDirective.js'></script>
+	</head>
+	<body>
+		<div ng-controller="PolynomialController">
+			Expand and simplify the following expressions:
+			<ul>
+				<li ng-repeat="p in problems">
+					<mpp-problem id={{'prob'+$index}} problem={{p.problem}} answer={{p.answer}} correct="p.correct"></mpp-problem>
+					<br>	
+				</li>
+			</ul>
+			{{numCorrect()}} out of {{problems.length}} correct
+		</div>
+	</body>
+</html>
